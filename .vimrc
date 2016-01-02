@@ -16,8 +16,16 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'luochen1990/rainbow'
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -51,16 +59,20 @@ syntax on
 set number
 " let mouse rock and roll
 set mouse=a
+" highlight current-selected line
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkgreen guifg=white
 " ========================================================================== "
 
-" ===============================taglist==================================== "
-let Tlist_Show_One_File = 1            	" 不同时显示多个文件的tag，只显示当前文件的
-let Tlist_Exit_OnlyWindow = 1          	" 如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_Use_Right_Window = 1         	" 在右侧窗口中显示taglist窗口
-let Tlist_Auto_Open = 1					" 启动vim后，自动打开taglist窗口
 
-map <silent> <F9> :TlistToggle<cr>		" 使用<F9>键就可以打开/关闭taglist窗口
+" ===============================tagbar==================================== "
+autocmd VimEnter * nested :TagbarOpen  " 启动vim时自动打开tagbar
+set updatetime=200 " 根据光标位置自动更新高亮tag的间隔时间，单位为毫秒
+autocmd VimEnter * nested :call tagbar#autoopen(1) " 若文件类型支持，则自动打开tagbar
+autocmd BufEnter * nested :call tagbar#autoopen(0) " 打开新标签时，自动打开tagbar
+nmap <F8> :TagbarToggle<CR>
 " ========================================================================== "
+
 
 " ===============================NERDTree==================================== "
 autocmd VimEnter * NERDTree 			" 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
@@ -68,11 +80,56 @@ autocmd VimEnter * NERDTree 			" 在 vim 启动的时候默认开启 NERDTree（
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-
+" 不显示缓冲文件，中间文件
+let NERDTreeIgnore=[ '.pyc$', '.pyo$', '.obj$', '.o$', '.so$', '.egg$', '^.git$', '^.svn$', '^.hg$' ]
+" 只剩一个NERDTree窗口时退出vim
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 map <silent> <F2> :NERDTreeToggle<cr>	" 按下 F2 调出/隐藏 NERDTree
 " ========================================================================== "
 
 
+" ===============================NERDTreeTab==================================== "
+let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_no_startup_for_diff = 0
+map <silent> <F3> :NERDTreeTabsToggle<CR>
+" ========================================================================== "
+
+
+" ===============================syntastic==================================== "
+" 首次打开和保存时都要进行语义检查
+let g:syntastic_check_on_open = 1
+" 设置错误提示符'x'
+let g:syntastic_error_symbol = 'x'
+" 设置警告提示符'!'
+let g:syntastic_warning_symbol = '!'
+" 当鼠标放在错误行则显示错误信息
+let g:syntastic_enable_balloons = 1
+" 保存退出时不用进行语义检测
+let g:syntastic_check_on_wq = 0
+" 编译有误则错误窗口显示，否在不显示
+"let g:syntastic_auto_loc_list = 1
+" 错误总会填充到错误窗口
+"let g:syntastic_always_populate_loc_list = 1
+" ========================================================================== "
+
+" ==============================solarized=================================== "
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+colorscheme solarized
+call togglebg#map("<F5>")
+" ========================================================================== "
+
+
+" ===============================rainbow==================================== "
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+" ========================================================================== "
+
+
+" ===============================XXXXXXX==================================== "
+" ========================================================================== "
 
 
 
