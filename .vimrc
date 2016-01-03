@@ -62,6 +62,13 @@ set mouse=a
 " highlight current-selected line
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkgreen guifg=white
+" highlight key words to be searched
+set hlsearch
+" highlight instantly
+set incsearch
+" set ctags path, it's default, in case modify it
+set tags=./tags,tags
+
 " ========================================================================== "
 
 
@@ -71,6 +78,19 @@ set updatetime=200 " 根据光标位置自动更新高亮tag的间隔时间，�
 autocmd VimEnter * nested :call tagbar#autoopen(1) " 若文件类型支持，则自动打开tagbar
 autocmd BufEnter * nested :call tagbar#autoopen(0) " 打开新标签时，自动打开tagbar
 nmap <F8> :TagbarToggle<CR>
+" ========================================================================== "
+
+" ===============================ctags==================================== "
+" do `ctags -R *` to generate `tags`
+map <silent> <F4> :!ctags -R<CR>		" press F4 to re-build ctags
+" ========================================================================== "
+
+
+" ===============================cscope==================================== "
+" do `cscope -Rbkq` to generate `cscope.out`
+if filereadable("cscope.out")
+    cs add cscope.out
+endif
 " ========================================================================== "
 
 
@@ -123,9 +143,16 @@ call togglebg#map("<F5>")
 " ========================================================================== "
 
 
+" ===============================ctrlp==================================== "
+let g:ctrlp_max_files=0			" list all file from Does not find all files #234
+								" https://github.com/kien/ctrlp.vim/issues/234
+" ========================================================================== "
+
 " ===============================rainbow==================================== "
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 " ========================================================================== "
+
+
 
 
 " ===============================XXXXXXX==================================== "
