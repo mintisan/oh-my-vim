@@ -69,7 +69,8 @@ set hlsearch
 set incsearch
 " set ctags path, it's default, in case modify it
 set tags=./tags,tags
-
+" incase can't delete in INSERT modee
+set backspace=indent,eol,start
 " ========================================================================== "
 
 
