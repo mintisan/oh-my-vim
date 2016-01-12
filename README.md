@@ -19,12 +19,14 @@
     git clone https://github.com/mintisan/oh-my-vim.git ~/oh-my-vim
     ```
 
-4. Create symbolic link to `~/.vimrc`
+4. Change the directory you just cloned(maybe `cd ~/oh-my-vim`), create symbolic link to `~/.vimrc`
 
     ```
     # Attension : the source file can't use relative path, must absolutely path
-    ln -s ~/oh-my-vim/.vimrc ~/.vimrc
+    ln -s $PWD/.vimrc ~/.vimrc
     ```
+> When you execute `echo $PWD` in shell, you will know what the `$PWD` means. 
+> Yes, it means the path of current directory you stayed.
 
 5. Download Linue Kernel Source Code, like [2.6.32 Version](https://cdn.kernel.org/pub/linux/kernel/v2.6/longterm/v2.6.32/linux-2.6.32.69.tar.xz), and `tar` it 
 
@@ -36,7 +38,7 @@
 
     ```
     ctags -R *
-    cscpoe -Rbkq
+    cscope -Rbkq
     ```
 > obviously, shuold install [ctags](http://ctags.sourceforge.net/) and [cscope](http://cscope.sourceforge.net/) firstly
 
