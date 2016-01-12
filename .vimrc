@@ -21,8 +21,6 @@ Plugin 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/vimproc.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'luochen1990/rainbow'
@@ -132,16 +130,6 @@ let g:syntastic_check_on_wq = 0
 "let g:syntastic_auto_loc_list = 1
 " 错误总会填充到错误窗口
 "let g:syntastic_always_populate_loc_list = 1
-" ========================================================================== "
-
-" ==============================solarized=================================== "
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_contrast="normal"
-let g:solarized_visibility="normal"
-colorscheme solarized
-call togglebg#map("<F5>")
 " ========================================================================== "
 
 
