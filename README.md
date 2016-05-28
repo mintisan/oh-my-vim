@@ -54,6 +54,7 @@
 - use `CTRL+w`+`left/right` to jump with (left-[NERDTree](https://github.com/scrooloose/nerdtree)-windown & center-main-window & right-[tagbar](https://github.com/majutsushi/tagbar)-window)
 - `CTRL+]` to locate definition and `CTRL+t` to come back
 - `:tabnew` to open a new tab;`:tabn` to the next tab; `tabp` to the previous tab
+- `Ack {pattern}` or `Ag {pattern} --hidden` to search text patten in current directory 
 - `/` to find specific string you like, and use `n` to next,`N` to previous
 - `cs find <x> <xxx>`: use cscope to location files or functions
 
