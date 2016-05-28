@@ -16,18 +16,18 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'majutsushi/tagbar'             " function name tag list at right side
-Plugin 'scrooloose/nerdtree'           " directory tree at left side
-Bundle 'jistr/vim-nerdtree-tabs'       " tab improve for NERDTree
-Plugin 'kien/ctrlp.vim'                " find file in cur-dir at bottom side
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/vimproc.vim'
-Plugin 'bling/vim-airline'             " status bar bottom
-Plugin 'airblade/vim-gitgutter'        " show what changed
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'luochen1990/rainbow'
 Plugin 'tmux-plugins/vim-tmux'
-Plugin 'mileszs/ack.vim'               " search text pattern in all files
-Plugin 'rking/ag.vim'                  " faster ack
-Plugin 'raimondi/delimitmate'          " automatic brackets
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+Plugin 'raimondi/delimitmate'
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
