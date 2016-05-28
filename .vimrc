@@ -69,6 +69,8 @@ set incsearch
 set tags=./tags,tags
 " incase can't delete in INSERT modee
 set backspace=indent,eol,start
+" set tab as 4 space
+set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 " ========================================================================== "
 
 
