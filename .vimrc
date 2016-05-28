@@ -73,6 +73,10 @@ set backspace=indent,eol,start
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source ./.vimrc
+" leader is comma
+let mapleader=","       
+" turn off search highlight, instead of `:nohlsearch`
+nnoremap <leader><space> :nohlsearch<CR>
 " ========================================================================== "
 
 
