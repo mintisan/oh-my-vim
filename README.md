@@ -50,7 +50,7 @@
 
 8. Use shortcut to jump between files and functions
 
-- use `CTRL+q` to find file;
+- use `CTRL+p` to find file;
 - use `CTRL+w`+`left/right` to jump with (left-[NERDTree](https://github.com/scrooloose/nerdtree)-windown & center-main-window & right-[tagbar](https://github.com/majutsushi/tagbar)-window)
 - `CTRL+]` to locate definition and `CTRL+t` to come back
 - `:tabnew` to open a new tab;`:tabn` to the next tab; `tabp` to the previous tab

@@ -16,15 +16,18 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'             " function name tag list at right side
+Plugin 'scrooloose/nerdtree'           " directory tree at left side
+Bundle 'jistr/vim-nerdtree-tabs'       " tab improve for NERDTree
+Plugin 'kien/ctrlp.vim'                " find file in cur-dir at bottom side
 Plugin 'Shougo/vimproc.vim'
-Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'             " status bar bottom
+Plugin 'airblade/vim-gitgutter'        " show what changed
 Plugin 'luochen1990/rainbow'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'mileszs/ack.vim'               " search text pattern in all files
+Plugin 'rking/ag.vim'                  " faster ack
+Plugin 'raimondi/delimitmate'          " automatic brackets
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -117,7 +120,7 @@ map <silent> <F2> :NERDTreeToggle<cr>	" 按下 F2 调出/隐藏 NERDTree
 
 
 " ===============================NERDTreeTab==================================== "
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1                           " shift +i to toggle
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_no_startup_for_diff = 0
 map <silent> <F3> :NERDTreeTabsToggle<CR>
@@ -145,6 +148,7 @@ let g:syntastic_check_on_wq = 0
 " ===============================ctrlp==================================== "
 let g:ctrlp_max_files=0			" list all file from Does not find all files #234
 								" https://github.com/kien/ctrlp.vim/issues/234
+let g:ctrlp_show_hidden = 1     "find hidden file
 " ========================================================================== "
 
 " ===============================rainbow==================================== "
@@ -154,13 +158,11 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 " ==============================delimitmate================================= "
 " automatic closing of quotes, parenthesis, brackets, etc.
-Plugin 'raimondi/delimitmate'
 " ========================================================================== "
 
 
-" ==========================find text in current dir======================== "
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
+" ======================ack&ag: find text in current dir==================== "
+
 " ========================================================================== "
 
 
