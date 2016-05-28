@@ -16,18 +16,18 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
+
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Shougo/vimproc.vim'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'luochen1990/rainbow'
-Plugin 'tmux-plugins/vim-tmux'
+Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'raimondi/delimitmate'
+
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -111,6 +111,7 @@ autocmd VimEnter * NERDTree 			" 在 vim 启动的时候默认开启 NERDTree（
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeGlyphReadOnly = 1
 " 不显示缓冲文件，中间文件
 let NERDTreeIgnore=[ '.pyc$', '.pyo$', '.obj$', '.o$', '.so$', '.egg$', '^.git$', '^.svn$', '^.hg$' ]
 " 只剩一个NERDTree窗口时退出vim
@@ -127,42 +128,10 @@ map <silent> <F3> :NERDTreeTabsToggle<CR>
 " ========================================================================== "
 
 
-" ===============================syntastic==================================== "
-" 首次打开和保存时都要进行语义检查
-let g:syntastic_check_on_open = 1
-" 设置错误提示符'x'
-let g:syntastic_error_symbol = 'x'
-" 设置警告提示符'!'
-let g:syntastic_warning_symbol = '!'
-" 当鼠标放在错误行则显示错误信息
-let g:syntastic_enable_balloons = 1
-" 保存退出时不用进行语义检测
-let g:syntastic_check_on_wq = 0
-" 编译有误则错误窗口显示，否在不显示
-"let g:syntastic_auto_loc_list = 1
-" 错误总会填充到错误窗口
-"let g:syntastic_always_populate_loc_list = 1
-" ========================================================================== "
-
-
 " ===============================ctrlp==================================== "
 let g:ctrlp_max_files=0			" list all file from Does not find all files #234
 								" https://github.com/kien/ctrlp.vim/issues/234
 let g:ctrlp_show_hidden = 1     "find hidden file
-" ========================================================================== "
-
-" ===============================rainbow==================================== "
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
-" ========================================================================== "
-
-
-" ==============================delimitmate================================= "
-" automatic closing of quotes, parenthesis, brackets, etc.
-" ========================================================================== "
-
-
-" ======================ack&ag: find text in current dir==================== "
-
 " ========================================================================== "
 
 
