@@ -71,6 +71,8 @@ set tags=./tags,tags
 set backspace=indent,eol,start
 " set tab as 4 space
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source ./.vimrc
 " ========================================================================== "
 
 
@@ -145,6 +147,10 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 " ========================================================================== "
 
 
+" ==============================delimitmate================================= "
+" automatic closing of quotes, parenthesis, brackets, etc.
+Plugin 'raimondi/delimitmate'
+" ========================================================================== "
 
 
 " ===============================XXXXXXX==================================== "
