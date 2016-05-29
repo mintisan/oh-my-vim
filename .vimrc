@@ -37,7 +37,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 " Pass the path to set the runtimepath properly.
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}      
+"Plugin 'user/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -78,9 +78,14 @@ set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source ./.vimrc
 " leader is comma
-let mapleader=","       
+let mapleader=","
 " turn off search highlight, instead of `:nohlsearch`
 nnoremap <leader><space> :nohlsearch<CR>
+" 80th-column if you write code
+if (exists('+colorcolumn'))
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=9
+endif
 " ========================================================================== "
 
 
