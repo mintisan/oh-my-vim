@@ -27,6 +27,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'raimondi/delimitmate'
+Plugin 'bronson/vim-trailing-whitespace'
 
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
@@ -36,7 +37,7 @@ Plugin 'raimondi/delimitmate'
 " Pass the path to set the runtimepath properly.
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
+"Plugin 'user/L9', {'name': 'newL9'}      
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
