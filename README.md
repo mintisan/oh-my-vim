@@ -50,11 +50,22 @@
 
 8. Use shortcut to jump between files and functions
 
+- use `CTRL+F` to forward page & `CTRL+B` to back page
+- use `gg` to top & `shift+g` to bottom(current file)
+- use `shift+m` to middle & `shift+l` to bottom & `shift+h` to top(current view)
+- use `:number` to any line of file
 - use `CTRL+p` to find file;
 - use `CTRL+w`+`left/right` to jump with (left-[NERDTree](https://github.com/scrooloose/nerdtree)-windown & center-main-window & right-[tagbar](https://github.com/majutsushi/tagbar)-window)
 - `CTRL+]` to locate definition and `CTRL+t` to come back
+	- Debian: `sudo apt-get install ctags`
+	- Mac: `brew install ctags`
+	- Windows: `choco install ctags`
 - `:tabnew` to open a new tab;`:tabn` to the next tab; `tabp` to the previous tab
-- `Ack {pattern}` or `Ag {pattern} --hidden` to search text patten in current directory 
+- `Ack {pattern}` or `Ag {pattern} --hidden` to search text patten in current directory
+	- Debian: `sudo apt-get install ack-grep`
+	- Mac: `brew install ack`
+	- Windows: `choco install ack`
 - `/` to find specific string you like, and use `n` to next,`N` to previous
 - `cs find <x> <xxx>`: use cscope to location files or functions
-
+	- sudo apt-get install cscope
+	- brew install cscope
