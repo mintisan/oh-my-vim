@@ -28,6 +28,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'junegunn/vim-easy-align'
 
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
@@ -73,8 +74,8 @@ set incsearch
 set tags=./tags,tags
 " incase can't delete in INSERT modee
 set backspace=indent,eol,start
-" set tab as 4 space
-set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+" set tab as 2 space, `:retab` to work on current buffer
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source ./.vimrc
 " leader is comma
@@ -99,7 +100,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " ===============================ctags==================================== "
 " do `ctags -R *` to generate `tags`
-map <silent> <F4> :!ctags -R<CR>		" press F4 to re-build ctags
+map <silent> <F4> :!ctags -R<CR>    " press F4 to re-build ctags
 " ========================================================================== "
 
 
@@ -112,32 +113,36 @@ endif
 
 
 " ===============================NERDTree==================================== "
-autocmd VimEnter * NERDTree 			" 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
+autocmd VimEnter * NERDTree       " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
 " fix E121: Undefined variable: g:NERDTreeDirArrowCollapsible Error
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrows           = 1
+let g:NERDTreeDirArrowExpandable  = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeGlyphReadOnly = 1
+let g:NERDTreeGlyphReadOnly       = 1
 " 不显示缓冲文件，中间文件
 let NERDTreeIgnore=[ '.pyc$', '.pyo$', '.obj$', '.o$', '.so$', '.egg$', '^.git$', '^.svn$', '^.hg$' ]
 " 只剩一个NERDTree窗口时退出vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
-map <silent> <F2> :NERDTreeToggle<cr>	" 按下 F2 调出/隐藏 NERDTree
+map <silent> <F2> :NERDTreeToggle<cr> " 按下 F2 调出/隐藏 NERDTree
 " ========================================================================== "
 
 
 " ===============================NERDTreeTab==================================== "
-let NERDTreeShowHidden=1                           " shift +i to toggle
+let NERDTreeShowHidden                      = 1                    " shift +i to toggle
 let g:nerdtree_tabs_open_on_console_startup = 1
-let g:nerdtree_tabs_no_startup_for_diff = 0
+let g:nerdtree_tabs_no_startup_for_diff     = 0
 map <silent> <F3> :NERDTreeTabsToggle<CR>
 " ========================================================================== "
 
 
 " ===============================ctrlp==================================== "
-let g:ctrlp_max_files=0			" list all file from Does not find all files #234
-								" https://github.com/kien/ctrlp.vim/issues/234
+let g:ctrlp_max_files   = 0     " list all file from Does not find all files #234
+                                " https://github.com/kien/ctrlp.vim/issues/234
 let g:ctrlp_show_hidden = 1     "find hidden file
+" ========================================================================== "
+
+" ================================EasyAlign================================= "
+vnoremap <silent> <Enter> :EasyAlign<cr>
 " ========================================================================== "
 
 
