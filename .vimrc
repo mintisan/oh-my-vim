@@ -29,6 +29,7 @@ Plugin 'rking/ag.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'chiel92/vim-autoformat'
 
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
@@ -84,8 +85,8 @@ let mapleader=","
 nnoremap <leader><space> :nohlsearch<CR>
 " 80th-column if you write code
 if (exists('+colorcolumn'))
-    set colorcolumn=80
-    highlight ColorColumn ctermbg=9
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=9
 endif
 " ========================================================================== "
 
@@ -107,7 +108,7 @@ map <silent> <F4> :!ctags -R<CR>    " press F4 to re-build ctags
 " ===============================cscope==================================== "
 " do `cscope -Rbkq` to generate `cscope.out`
 if filereadable("cscope.out")
-    cs add cscope.out
+  cs add cscope.out
 endif
 " ========================================================================== "
 
@@ -144,6 +145,7 @@ let g:ctrlp_show_hidden = 1     "find hidden file
 " ================================EasyAlign================================= "
 vnoremap <silent> <Enter> :EasyAlign<cr>
 " ========================================================================== "
+
 
 
 
