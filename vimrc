@@ -30,9 +30,9 @@ Plugin 'raimondi/delimitmate'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'chiel92/vim-autoformat'
-Plugin 'SirVer/ultisnips'
-Plugin 'scrooloose/syntastic'
-Plugin 'valloric/youcompleteme'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'valloric/youcompleteme'
 
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
