@@ -51,7 +51,7 @@ or u can use shell script below after you backup your vim config:
 sh -c "$(curl -fSL https://raw.githubusercontent.com/mintisan/oh-my-vim/master/install.sh)"
 ```
 
-8. Use shortcut to jump between files and functions
+Use shortcut to jump between files and functions
 
 - use `CTRL+F` to forward page & `CTRL+B` to back page
 - use `gg` to top & `shift+g` to bottom(current file)
