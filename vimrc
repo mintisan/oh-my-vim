@@ -30,7 +30,9 @@ Plugin 'raimondi/delimitmate'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'chiel92/vim-autoformat'
-" Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
+Plugin 'klen/python-mode'
+
 " Plugin 'scrooloose/syntastic'
 " Plugin 'valloric/youcompleteme'
 
@@ -152,7 +154,7 @@ vnoremap <silent> <Enter> :EasyAlign<cr>
 " ===============================ultisnips================================== "
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
