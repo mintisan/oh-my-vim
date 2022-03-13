@@ -23,7 +23,7 @@
 
     ```
     # Attension : the source file can't use relative path, must absolutely path
-    ln -s $PWD/.vimrc ~/.vimrc
+    ln -s $PWD/vimrc ~/.vimrc
     ```
 > When you execute `echo $PWD` in shell, you will know what the `$PWD` means. 
 
